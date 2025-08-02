@@ -1,1 +1,40 @@
-<h1>Hello Sharanayya Welcome to gubbi Totadappa </h1>                  
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        input {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 250px;
+        }
+        button {
+            padding: 8px 16px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Maharaja and Swamy Hotel's</h2>
+
+    <form action="/predict_form" method="post">
+        <input type="text" name="MedInc" placeholder="Median Income" required /><br>
+        <input type="text" name="HouseAge" placeholder="House Age" required /><br>
+        <input type="text" name="AveRooms" placeholder="Average Rooms" required /><br>
+        <input type="text" name="AveBedrms" placeholder="Average Bedrooms" required /><br>
+        <input type="text" name="Population" placeholder="Population" required /><br>
+        <input type="text" name="AveOccup" placeholder="Average Occupants" required /><br>
+        <input type="text" name="Latitude" placeholder="Latitude" required /><br>
+        <input type="text" name="Longitude" placeholder="Longitude" required /><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
